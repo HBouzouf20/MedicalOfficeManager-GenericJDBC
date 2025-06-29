@@ -3,10 +3,13 @@ package org.hbdev.dao;
 import org.hbdev.models.Patient;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PatientDaoImpl extends AbstractCrudDao<Patient, Long> implements PatientDAO{
+
+    public PatientDaoImpl() {
+        super(Patient.class);
+    }
 
     @Override
     protected void setInsertStatement(PreparedStatement stmt, Patient entity) throws SQLException {
